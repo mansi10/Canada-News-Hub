@@ -1,0 +1,22 @@
+<header>
+    <span style="font-size: x-large;">Install Angular</span> <button style="float: right;" mat-button mat-dialog-close>X</button>
+</header>
+<mat-dialog-content class="mat-typography" style="height: 60%; width: 100%;">
+    <mat-card *ngFor="let comment of listComment">
+        <h2>
+            {{comment?.CreatedBy}} on {{comment?.CreatedOn}}
+        </h2>
+        <mat-card-content>
+            {{comment?.Comment}}
+        </mat-card-content>
+    </mat-card>  
+</mat-dialog-content>
+<mat-dialog-actions>
+    <!-- <form style="width:100%">      -->
+        <mat-form-field appearance="fill" style="width:100%;">
+          <mat-label>Leave a comment</mat-label>
+          <textarea matInput placeholder="Comment" rows="2" cdkFocusInitial [(ngModel)]= "comment"></textarea>
+        </mat-form-field>
+        <button mat-button (click)="addComment()" style="float: right;"><mat-icon>send</mat-icon></button>
+      <!-- </form> -->
+</mat-dialog-actions>

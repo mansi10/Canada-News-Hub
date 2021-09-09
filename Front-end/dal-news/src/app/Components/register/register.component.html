@@ -1,0 +1,80 @@
+<div style="width:100%; height: 100vh; background-color:#6CB4EE; padding-top: 5%;">
+<mat-card style="width: 40%; margin: auto">
+
+    <section class="row">
+
+        <section class="col-md-4" style="margin-top: 30px; margin-bottom: 20px;; text-align: center;">
+            <h1 style="font-weight: 900; font-size: xxx-large; ">DalNewsHub</h1>
+        </section>
+
+        <section class="col-md-4">
+
+            <form [formGroup]="ProfileFormGroup">
+
+                 <div class="roleClass">
+                    <mat-radio-group required formControlName="Role" color="primary" [(ngModel)]="Role">
+                    <mat-radio-button value="Reader" (click)="isAuditorResponse()" [checked]="true">Reader</mat-radio-button>
+                    <mat-radio-button value="Auditor" (click)="isAuditorResponse()">Auditor</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>First Name</mat-label>
+                    <input matInput [(ngModel)]="FirstName" formControlName="FirstName" placeholder="First Name" type="text">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['FirstName'].errors?.required">First Name is required</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['FirstName'].errors?.pattern">First Name should be Alpha-numeric </mat-error>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline" class="form-field">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [(ngModel)]="LastName" formControlName="LastName" placeholder="Last Name" type="text">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['LastName']?.errors?.required">Last Name is required</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['LastName']?.errors?.pattern">Last Name should be alpha-numeric</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput [(ngModel)]="Email" formControlName="Email" placeholder="Email" type="email">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['Email']?.errors?.required">Email is required</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['Email']?.errors?.pattern">Please Enter valid Email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Password</mat-label>
+                    <input matInput [(ngModel)]="Password" formControlName="Password" type="Password" placeholder="Password">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['Password']?.errors?.required">Password is required</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['Password']?.errors?.minlength">Password must be atleast 8 charaters</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [(ngModel)]="ConfirmPassword" formControlName="ConfirmPassword" type="Password" placeholder="Confirm Password">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['ConfirmPassword']?.errors?.required">Please re-enter password</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['ConfirmPassword']?.errors?.mismatch">Password must match</mat-error>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="util.isAuditor" appearance="outline" class="form-field">
+                    <mat-label>Why do you want to register as Auditor?</mat-label>
+                    <input matInput [(ngModel)]="ReasonForBeingAuditor" formControlName="ReasonForBeingAuditor" placeholder="Why do you want to register as Auditor?" type="text">
+                    <mat-error *ngIf="ProfileFormGroup?.controls['ReasonForBeingAuditor']?.errors?.required">Your response is required</mat-error>
+                    <mat-error *ngIf="ProfileFormGroup?.controls['ReasonForBeingAuditor']?.errors?.maxlength">Your response must be maximu 200 characters</mat-error>
+                </mat-form-field>
+
+                <div>
+                    <button mat-button class="register" (click)="submitRegistration();">Register</button>
+                </div>
+
+            </form>
+
+        </section>
+    
+        </section>
+
+                <div class="division">
+                    <mat-label>Already registered? &nbsp;</mat-label>
+                    <span class="link" style="color: blue; text-decoration: underline; cursor: pointer;" mat-label (click)="login()">Sign-In</span>
+                </div>
+
+            </mat-card>
+        </div>

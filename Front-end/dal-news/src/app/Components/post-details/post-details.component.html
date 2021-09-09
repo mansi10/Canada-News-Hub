@@ -1,0 +1,28 @@
+<mat-card style="min-height: 90%;">
+    <header>
+        <span style="font-size: x-large;">Post Details</span> 
+    </header>
+    <form style="width:100%" [formGroup]="addPostForm">
+            <mat-form-field appearance="fill" >
+              <mat-label>Title</mat-label>
+              <input matInput placeholder="Title" formControlName="title">
+              <mat-error *ngIf="addPostForm.get('title').invalid">Title is Required</mat-error>
+            </mat-form-field>
+          <div *ngIf="!isEdit">
+            <button mat-stroked-button type="button" (click)="picker.click()">Upload Image</button>
+            <input #picker type="file" style="display: none;" (change)="imagePicked($event)">
+          </div>
+          <div class="dvPreview" *ngIf="previewImg">
+            <img [src]="previewImg" [alt]="addPostForm.value.title" >
+
+          </div>
+            <mat-form-field appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea matInput placeholder="Description" rows="10" formControlName="content"></textarea>
+              <mat-error *ngIf="addPostForm.get('content').invalid">Content is Required</mat-error>
+            </mat-form-field>
+        <button mat-raised-button disable (click)="save()">
+            Save
+        </button>
+    </form>
+</mat-card>

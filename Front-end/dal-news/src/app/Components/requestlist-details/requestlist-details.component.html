@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>
+    {{util.modalTitle}}
+    <mat-icon (click)="close()" style="float:right;cursor:pointer;">close</mat-icon>
+  </h1>
+  <div mat-dialog-content>
+    <p>
+    <mat-form-field appearance="outline">
+      <mat-label>User's Name</mat-label>
+      <input matInput [(ngModel)]="data.RequesterName" disabled>
+    </mat-form-field>
+    </p>
+    
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Request Type</mat-label>
+          <input matInput [(ngModel)]="data.RequestType" disabled>
+        </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>News Title</mat-label>
+        <input matInput [(ngModel)]="data.NewsTitle" disabled>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>News Content</mat-label>
+        <input matInput [(ngModel)]="data.NewsDescription" disabled>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>News Image</mat-label>
+        <input matInput [(ngModel)]="data.NewsImageURL" disabled>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Request Status</mat-label>
+        <input matInput [(ngModel)]="data.Status" disabled>
+      </mat-form-field>
+    </p>
+    
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="Approve(data.RequestType);">Approve</button>
+    <button mat-raised-button color="warn" mat-dialog-close (click)="Declined();">Decline</button>
+  </div>
+  

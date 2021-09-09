@@ -1,0 +1,17 @@
+.div-container{
+    padding-top: 20px;
+    height: 78%;
+width: 100%;
+background-color: lightgray;
+overflow-y: auto ;
+overflow-x: hidden;
+}
+
+.profile-icon{    
+    background-color: black;
+    float: right;
+    }
+
+.profile-icon:hover{
+    background-color: gray;
+}

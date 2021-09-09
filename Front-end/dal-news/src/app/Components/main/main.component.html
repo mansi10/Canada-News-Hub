@@ -1,0 +1,29 @@
+<header style="height: 10%;">
+    <mat-grid-list cols="12" rowHeight="100%" style="border-bottom: solid 1px #f2ac00;">
+        <mat-grid-tile  colspan="3" rowspan="1">
+          <img src="https://cdn.dal.ca/etc/designs/dalhousie/clientlibs/global/default/images/logos/dalhousie-logo-black.svg.lt_03b76acfc2f5fdf8c1ce5ef80071ef35.res/dalhousie-logo-black.svg">
+        </mat-grid-tile>
+        <mat-grid-tile  colspan="8" rowspan="1">
+          
+        </mat-grid-tile>
+        <mat-grid-tile  colspan="1" rowspan="1">
+            <button mat-mini-fab class="profile-icon" [matMenuTriggerFor]="ProfileMenu">
+                <mat-icon style="color: white;">perm_identity</mat-icon>
+              </button>
+            <!-- <mat-icon class="profile-icon" [matMenuTriggerFor]="ProfileMenu" aria-hidden="false" aria-label="Example home icon">perm_identity</mat-icon> -->
+            <mat-menu #ProfileMenu="matMenu">
+                <button mat-menu-item [routerLink]="'/main/#'">Profile</button>
+                <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
+                </mat-grid-tile>
+
+      </mat-grid-list>
+
+</header>
+<header style="height: 8%;" *ngIf="isShowHeader">
+  <button mat-button [routerLink]="'/main/news'">News</button>
+  <button mat-button [routerLink]="'/main/request-list'" *ngIf="dataservice.userData.Role == 'Admin'">Request Dashboard</button>
+</header>
+<div class="div-container">
+    <router-outlet></router-outlet>
+</div>

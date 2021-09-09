@@ -1,0 +1,38 @@
+table{
+    width: 80%;
+    margin-left: 50px;
+    margin-right:50px;
+    margin-bottom:50px;
+  }
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .modalLink:hover{
+    text-decoration: underline;
+  }
+  .modalLink{
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .tableHeader{
+    font-weight: bold !important;
+  }
+  
+  h3, h4{
+      margin: 0 0 0px !important;
+  }
+  
+  .heading{
+    color: #00008B;
+    padding: 10px 10px;
+    background-color: #DCDCDC;
+  }
+  
+  .mat-divider{
+    color: #00008B !important;
+  }
+  
+  a{
+    color: #00008B !important;
+  }

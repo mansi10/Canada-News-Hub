@@ -1,0 +1,62 @@
+.post-container{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .post-card {
+      width: 90%;
+      margin: 0px 50px 15px 50px;
+    }
+  
+    mat-card-title{
+      color:rgb(0, 0, 0);
+      font-size:40px
+      }
+  
+      .link{
+        font-size: small;
+      }
+  
+      .addAnnButton{
+        margin-right: 40px;
+        float:right;
+      }
+  
+      .addAnnButtonDiv{
+        width:100%;
+       height:70px; 
+       margin:0px;
+      }
+  
+      .cardDiv{
+        margin:0px;
+        padding: 0px;
+        width: 100%;
+      }
+  
+      .post-spacer {
+        flex: 1 1 auto;
+      }
+  
+      .line-clamp{
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          -webkit-box-orient: vertical;  
+      }
+  
+      .limitTextHeight {
+        height: 40px;
+        overflow: hidden;
+    }
+    
+    .post-img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+    }
+
+    .div-post-img{
+      background-color: gray;
+    }

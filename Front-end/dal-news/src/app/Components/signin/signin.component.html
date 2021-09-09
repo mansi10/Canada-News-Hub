@@ -1,0 +1,50 @@
+<div style="width:100%; height: 100vh; background-color: #6CB4EE; padding-top: 5%;">
+    <mat-card style="width: 40%; margin: auto">
+    
+        <section class="row">
+    
+            <section class="col-md-4" style="margin-top: 30px; margin-bottom: 30px;; text-align: center;">
+                <h1 style="font-weight: 900; font-size: xxx-large; ">DalNewsHub</h1>
+            </section>
+    
+            <section class="col-md-4">
+    
+                <form [formGroup]="LoginFormGroup">
+    
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="Email" formControlName="Email" placeholder="Email" type="email">
+                        <mat-error *ngIf="LoginFormGroup?.controls['Email']?.errors?.required">Email is required</mat-error>
+                        <mat-error *ngIf="LoginFormGroup?.controls['Email']?.errors?.pattern">Please Enter valid Email</mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" class="form-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput [(ngModel)]="Password" formControlName="Password" type="Password" placeholder="Password">
+                        <mat-error *ngIf="LoginFormGroup?.controls['Password']?.errors?.required">Password is required</mat-error>
+                        <mat-error *ngIf="LoginFormGroup?.controls['Password']?.errors?.minlength">Password must be atleast 8 charaters</mat-error>
+                    </mat-form-field>
+    
+                    <div>
+                        <button mat-button class="login" color="primary" (click)="login();">Login</button>
+                    </div>
+    
+                </form>
+    
+            </section>
+        
+            </section>
+    
+            <div class="division">
+                <mat-label>New to DalNewsHub? &nbsp;</mat-label>
+                <span class="link" style="color: blue; text-decoration: underline; cursor: pointer;" mat-label
+                    (click)="gotoRegister()">
+                    <button mat-button (click)="gotoRegister()" style = "width: 28%;
+                    background-color: white;
+                    color: #002b5c;
+                    text-align: center;">Join Now</button>
+                </span>
+            </div>
+    
+                </mat-card>
+            </div>
